@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate>{
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate, UIGestureRecognizerDelegate>{
     AVAudioPlayer *audioPlayer;
 }
 
@@ -18,6 +18,7 @@
 
 @property  NSInteger activeRow;
 @property BOOL allowFrameChange;
+
 -(IBAction) playAudio;
 -(IBAction) stopAudio;
 @end
