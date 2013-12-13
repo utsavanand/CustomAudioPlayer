@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NameViewController : UIViewController
+@interface NameViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>{
+    UITableView *nameTable;
+    NSArray *nameContainer;
+}
+
+@property (nonatomic, retain) UITableView *nameTable;
 
 @end

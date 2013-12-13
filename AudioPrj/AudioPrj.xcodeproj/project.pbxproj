@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		938FCEFB3E6A4B7FA63ED348 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E596C1EAE26B4B109D34456B /* libPods.a */; };
+		A5127C6E185B3CEF0012B181 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5127C6D185B3CEF0012B181 /* NameViewController.m */; };
+		A5127C71185B3E010012B181 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5127C70185B3E010012B181 /* DateViewController.m */; };
 		A5C6235F185A237200A6FDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D6C9E3185A18C200C3CEF9 /* Main.storyboard */; };
 		A5C62364185A379900A6FDB5 /* PlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C62363185A379900A6FDB5 /* PlayButton.png */; };
 		A5C62368185A476A00A6FDB5 /* AudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C62367185A476A00A6FDB5 /* AudioCell.m */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5127C6C185B3CEF0012B181 /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameViewController.h; sourceTree = "<group>"; };
+		A5127C6D185B3CEF0012B181 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
+		A5127C6F185B3E010012B181 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
+		A5127C70185B3E010012B181 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		A5C62362185A23F800A6FDB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5C62363185A379900A6FDB5 /* PlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButton.png; sourceTree = "<group>"; };
 		A5C62366185A476A00A6FDB5 /* AudioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioCell.h; sourceTree = "<group>"; };
@@ -88,6 +94,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5127C72185B3E550012B181 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MainController;
+			sourceTree = "<group>";
+		};
+		A5127C73185B3E620012B181 /* NameFilter */ = {
+			isa = PBXGroup;
+			children = (
+				A5127C6C185B3CEF0012B181 /* NameViewController.h */,
+				A5127C6D185B3CEF0012B181 /* NameViewController.m */,
+			);
+			name = NameFilter;
+			sourceTree = "<group>";
+		};
+		A5127C74185B3E6B0012B181 /* DateFilter */ = {
+			isa = PBXGroup;
+			children = (
+				A5127C6F185B3E010012B181 /* DateViewController.h */,
+				A5127C70185B3E010012B181 /* DateViewController.m */,
+			);
+			name = DateFilter;
+			sourceTree = "<group>";
+		};
 		A5C62365185A37A300A6FDB5 /* ImageResources */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +163,9 @@
 		A5D6C9D7185A18C200C3CEF9 /* AudioPrj */ = {
 			isa = PBXGroup;
 			children = (
+				A5127C74185B3E6B0012B181 /* DateFilter */,
+				A5127C73185B3E620012B181 /* NameFilter */,
+				A5127C72185B3E550012B181 /* MainController */,
 				A5D6C9E0185A18C200C3CEF9 /* AppDelegate.h */,
 				A5D6C9E1185A18C200C3CEF9 /* AppDelegate.m */,
 				A5D6C9E3185A18C200C3CEF9 /* Main.storyboard */,
@@ -309,7 +343,9 @@
 			files = (
 				A5C62368185A476A00A6FDB5 /* AudioCell.m in Sources */,
 				A5D6C9E8185A18C200C3CEF9 /* ViewController.m in Sources */,
+				A5127C6E185B3CEF0012B181 /* NameViewController.m in Sources */,
 				A5D6C9E2185A18C200C3CEF9 /* AppDelegate.m in Sources */,
+				A5127C71185B3E010012B181 /* DateViewController.m in Sources */,
 				A5D6C9DE185A18C200C3CEF9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

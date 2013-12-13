@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "AudioCell.h"
+#import "NameViewController.h"
+#import "DateViewController.h"
+
 @interface ViewController ()
 
 @end
@@ -83,11 +86,15 @@
 }
 
 -(void)filterByName:(id)sender{
+    NameViewController *nameVC = [[NameViewController  alloc] init];
     
+    [self.navigationController pushViewController:nameVC animated:YES];
 }
 
 -(void)filterByDate:(id)sender{
+    DateViewController *dateVC = [[DateViewController  alloc] init];
     
+    [self.navigationController pushViewController:dateVC animated:YES];
 }
 
 -(void)playAudio

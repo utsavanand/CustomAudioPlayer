@@ -9,14 +9,17 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
-@synthesize navController;
-@synthesize viewController;
-@synthesize window;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    viewController = [[ViewController alloc] init];
-    navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    [window addSubview:[navController view]];
+
+    NSArray *ver = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
+    if ([[ver objectAtIndex:0] intValue] >= 7) {
+        UIView *addStatusBar = [[UIView alloc] init];
+        addStatusBar.frame = CGRectMake(0, 0, 320, 20);
+        addStatusBar.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1]; //You can give your own color pattern
+        [self.window.rootViewController.view addSubview:addStatusBar];
+    }
     // Override point for customization after application launch.
     return YES;
 }
