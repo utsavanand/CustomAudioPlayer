@@ -9,9 +9,14 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
-
+@synthesize navController;
+@synthesize viewController;
+@synthesize window;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    viewController = [[ViewController alloc] init];
+    navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [window addSubview:[navController view]];
     // Override point for customization after application launch.
     return YES;
 }

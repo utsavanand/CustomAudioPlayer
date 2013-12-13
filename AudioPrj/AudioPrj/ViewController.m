@@ -25,9 +25,14 @@
 {
     [super viewDidLoad];
     
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     allowFrameChange=NO;
     
     aSlider = [[UISlider alloc] init];
+    
+    [self renderNavigationBar];
     
     // Initialising the tableView
     
@@ -51,6 +56,38 @@
     audioPlayer.volume = 1.0f;
     [audioPlayer prepareToPlay];
     aSlider.maximumValue = [audioPlayer duration];
+}
+
+-(void)renderNavigationBar{
+    UIButton *nameFilterBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 64, 24)];
+    [nameFilterBtn setTitle:@"Name" forState:UIControlStateNormal];
+    [nameFilterBtn addTarget:self action:@selector(filterByName:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *nameFilter = [[UIBarButtonItem alloc] initWithCustomView:nameFilterBtn];
+    self.navigationItem.leftBarButtonItem = nameFilter;
+    
+    UIButton *dateFilterBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 64, 24)];
+    [dateFilterBtn setTitle:@"Date" forState:UIControlStateNormal];
+    [dateFilterBtn addTarget:self action:@selector(filterByDate:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *dateFilter = [[UIBarButtonItem alloc] initWithCustomView:dateFilterBtn];
+    self.navigationItem.rightBarButtonItem = dateFilter;
+    self.navigationItem.title = @"Connect & Sell";
+    NSArray *ver = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
+    if ([[ver objectAtIndex:0] intValue] >= 7) {
+        self.navigationController.navigationBar.barTintColor = [UIColor grayColor];
+        self.navigationController.navigationBar.translucent = NO;
+    } else {
+        self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+
+    }
+    
+}
+
+-(void)filterByName:(id)sender{
+    
+}
+
+-(void)filterByDate:(id)sender{
+    
 }
 
 -(void)playAudio

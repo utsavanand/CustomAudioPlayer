@@ -11,6 +11,7 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate, UIGestureRecognizerDelegate>{
     AVAudioPlayer *audioPlayer;
+    UITableView *audioTable;
 }
 
 @property (retain, nonatomic) UITableView *audioTable;
